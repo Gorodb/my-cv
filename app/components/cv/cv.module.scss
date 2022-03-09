@@ -1,0 +1,162 @@
+.header {
+  background-color: var(--dark-background);
+  height: 225px;
+  width: 100%;
+  padding: 0 60px 0;
+}
+
+.headerContent {
+  display: grid;
+  max-width: 1024px;
+  grid-template-columns: 350px 1fr 225px;
+  margin: 0 auto;
+}
+
+.infoBlock {
+  margin-top: 30px;
+}
+
+.position {
+  display: inline-block;
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 10px;
+  color: var(--header-secondaty-text);
+}
+
+.contactBlock {
+  margin-top: 45px;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 20px auto;
+  grid-gap: 10px;
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.contactText {
+  font-size: 14px;
+  line-height: 14px;
+  color: var(--header-text);
+}
+
+.icon {
+  @include icon(14px, 14px, var(--header-text));
+}
+
+.darkIcon {
+  @include icon(14px, 14px, var(--primary-text));
+}
+
+.phoneIcon {
+  @include phoneIcon;
+}
+
+.emailIcon {
+  @include emailIcon;
+}
+
+.addressIcon {
+  @include geoIcon;
+}
+
+.layout {
+  min-width: 768px;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.withMargin {
+  margin-bottom: 25px;
+}
+
+.italicText {
+  font-family: montserrat-i, serif;
+  font-style: italic;
+}
+
+.boldText {
+  font-weight: bold;
+}
+
+.article {
+  margin-bottom: 45px;
+  padding: 10px;
+
+  &:hover {
+    background-color: var(--main-background);
+    border-radius: 12px;
+  }
+}
+
+.periodBlock {
+  border-left: 2px solid var(--primary-text);
+  padding-left: 18px;
+}
+
+.workHistory {
+  display: grid;
+  grid-template-columns: 200px auto;
+  grid-gap: 60px;
+}
+
+.list {
+  padding-left: 30px;
+}
+
+.footer {
+  min-width: 768px;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 60px;
+}
+
+.exampleLink {
+  margin-bottom: 14px;
+}
+
+@media (max-width: 768px) {
+  .headerContent {
+    grid-template-columns: 1fr;
+    height: auto;
+
+    .image {
+      display: none;
+    }
+
+    .contactBlock {
+      display: none;
+    }
+  }
+
+  .layout {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .article {
+    margin-bottom: 10px;
+  }
+
+  .workHistory {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+
+  .footer {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+  }
+}
