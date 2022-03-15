@@ -45,14 +45,32 @@ export const Cv = (): JSX.Element => {
             For last 5 years write autotests on js/ts for ui web and rest api tests. Using docker to run tests on Gitlab-ci. In my personal time, to solve needs in custom software I have learn ExpressJS, NestJS and ReactJS.
           </Span>
         </article>
-        <article className={styles.article}>
-          <H type={HTypeEnum.h2} className={styles.withMargin}>Education</H>
-          <div className={styles.periodBlock}>
-            <H type={HTypeEnum.h4} className={styles.italicText}>2006 — 2011</H>
-            <H type={HTypeEnum.h3}>Ulyanovsk State University</H>
-            <H type={HTypeEnum.h4}>Applied Mathematics, Mathematician</H>
-          </div>
-        </article>
+        <div className={styles.educationAndSkills}>
+          <article className={styles.article}>
+            <H type={HTypeEnum.h2} className={styles.withMargin}>Education</H>
+            <div className={styles.periodBlock}>
+              <H type={HTypeEnum.h4} className={styles.italicText}>2006 — 2011</H>
+              <H type={HTypeEnum.h3}>Ulyanovsk State University</H>
+              <H type={HTypeEnum.h4}>Applied Mathematics, Mathematician</H>
+            </div>
+          </article>
+          <article className={styles.article}>
+            <H type={HTypeEnum.h2} className={styles.withMargin}>Skills</H>
+            <Span>
+              <ul className={styles.skillsList}>
+                <li><span className={styles.boldText}>Manual testing</span></li>
+                <li><span className={styles.boldText}>Test documentation</span></li>
+                <li><span className={styles.boldText}>Automation testing:</span> api testing, web ui testing, slack/telegram bots, allure hub</li>
+              </ul>
+              <br />
+              <span className={styles.boldText}>JS/TS:</span> playwright, puppeteer, protractor, axios, jest, allure.
+              <br />
+              <span className={styles.boldText}>Dev:</span> ExpressJS, NestJS, ReactJS, redux, redux-toolkit, rtk-query.
+              <br /><br />
+              Have experience with python and java.
+            </Span>
+          </article>
+        </div>
         <H type={HTypeEnum.h2} className={styles.withMargin}>Work History</H>
         <article className={cn(styles.article)}>
           <div className={styles.workHistory}>
