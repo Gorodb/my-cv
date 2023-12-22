@@ -9,18 +9,17 @@ export const Cv = (): JSX.Element => {
   return (
     <div>
       <header className={styles.header}>
-        <div className={styles.headerContent}>
-          <div className={styles.infoBlock}>
+        <div className={cn(styles.headerContent, styles.headerGrid)}>
+          <div className={cn(styles.infoBlock, styles.nameBox)}>
             <div>
               <H type={HTypeEnum.h1}>Ramis</H>
               <H type={HTypeEnum.h1}>Vakazov</H>
-              <span className={styles.position}>QA specialist</span>
             </div>
           </div>
-          <div className={styles.contactBlock}>
+          <div className={cn(styles.contactBlock, styles.contactBox)}>
             <div className={styles.contact}>
               <i className={cn(styles.icon, styles.phoneIcon)}/>
-              <span className={styles.contactText}>+7 (908) 485-69-87</span>
+              <span className={styles.contactText}>+49 160 98764756</span>
             </div>
             <div className={styles.contact}>
               <i className={cn(styles.icon, styles.emailIcon)}/>
@@ -29,10 +28,13 @@ export const Cv = (): JSX.Element => {
             </div>
             <div className={styles.contact}>
               <i className={cn(styles.icon, styles.addressIcon)}/>
-              <span className={styles.contactText}>St.Petersburg, Kollontai, 6/1</span>
+              <span className={styles.contactText}>Berlin, Boyenstraẞe 36</span>
             </div>
           </div>
-          <div className={styles.image}>
+          <div className={cn(styles.position, styles.positionBox)}>
+            <span>Senior AQA/SDET specialist</span>
+          </div>
+          <div className={cn(styles.image, styles.imageBox)}>
             <Image alt={"Logo"} width={225} height={225} src={'/my_bw_photo.png'}/>
           </div>
         </div>
@@ -41,12 +43,16 @@ export const Cv = (): JSX.Element => {
         <article className={cn(styles.article)}>
           <H type={HTypeEnum.h2}>About me</H>
           <Span className={styles.italicText}>
-            I enjoy testing and IT at all, have mathematicians education and love to solve problems. I work as qa
-            specialist for last 8 years. Has experience as qa lead, manual functional tester, automation test engineer.
+            I do both automation and manual testing:
             <br/>
-            For last 5 years write autotests on js/ts for ui web and rest api tests. Using docker to run tests on
-            Gitlab-ci. In my personal time, to solve needs in custom software I have learn ExpressJS, NestJS and
-            ReactJS.
+            <ul className={styles.list}>
+              <li>have a lot of experience with <b>js/ts</b> based frameworks for ui automation testing: <b>playwright, puppeteer, protractor</b></li>
+              <li>automated mobile apps testing using <b>webdriverIo, appium and mochaJs</b></li>
+              <li>developed <b>rest api</b> automation tests using only <b>axios + jest</b></li>
+              <li>implemented slack bots using slack API to check gitlab MRs and what website is available by schedule</li>
+              <li>developed services for QA needs like an <b>allure / html-reports hub</b> to see reports after running tests on ci,
+                or test devices management system. Backend on <b>ExpressJS / NestJS</b>, frontend on <b>ReactJS + redux-toolkit</b></li>
+            </ul>
           </Span>
         </article>
         <div className={styles.educationAndSkills}>
@@ -70,9 +76,9 @@ export const Cv = (): JSX.Element => {
                 </li>
               </ul>
               <br/>
-              <span className={styles.boldText}>JS/TS:</span> playwright, puppeteer, protractor, axios, jest, allure.
+              <span className={styles.boldText}>JS/TS:</span> webdriverio, appium, playwright, puppeteer, protractor, axios, jest, allure.
               <br/>
-              <span className={styles.boldText}>Dev:</span> ExpressJS, NestJS, ReactJS, redux, redux-toolkit, rtk-query.
+              <span className={styles.boldText}>Dev:</span> ExpressJS, NestJS, ReactJS, redux-toolkit, rtk-query.
               <br/><br/>
               Have experience with python and java.
             </Span>
@@ -84,9 +90,55 @@ export const Cv = (): JSX.Element => {
             <div>
               <div className={styles.periodBlock}>
                 <H type={HTypeEnum.h5} className={styles.italicText}>
-                  February 2017 —
+                  June 2022 —
                   <br/>
                   current
+                </H>
+                <H type={HTypeEnum.h3}>Go-e Labs</H>
+                <H type={HTypeEnum.h4}>QA Engineer</H>
+              </div>
+            </div>
+            <Span>
+              <b>My responsibilities:</b>
+              <ul className={styles.list}>
+                <li>Manual and automation (E2E) testing of website and mobile apps</li>
+                <li>All kinds of manual testing: functional, regression, smoke, acceptance, usability and other</li>
+                <li>Automation testing: mobile apps and web UI</li>
+                <li>Code review of other js/ts QA specialists</li>
+                <li>CI integration on gitlab ci</li>
+                <li>Reviewing the design, discussing new features with the team</li>
+              </ul>
+              <br/>
+              <b>Tools:</b> charles proxy, postman, docker, playwright, jest, webdriver io, appium, mochaJS, allure, NestJS,
+              ReactJS, websocket, @slack/bolt.
+              <br/><br/>
+              Tested marketing website of the company. Implemented the full coverage with automation tests using
+              Playwright and Jest (jest-circus), and allure-reporter.
+              <br/><br/>
+              Tested mobile apps (written on RN, android and ios versions). Implemented on WebdriverIO + Appium an automation
+              tests framework. For this framework I also implemented:
+              <ul className={styles.list}>
+                <li>downloading and installing builds from AppCenter using AppCenter API and axios</li>
+                <li>chargers cloud API usage by connecting over websocket to the chargers</li>
+                <li>automatic screenshots and video recording for failed/broken tests</li>
+                <li>test wrapper to divide tests on real devices and emulators/simulators</li>
+              </ul>
+              <br/><br/>
+              Developed the app for adding and checking test chargers statuses using NestJS, ReactJS and redux-toolkit.
+              <br/><br/>
+              Implemented slack bot to check not approved MRs in different projects and sent information about project and
+              link to MR to related slack channel.
+            </Span>
+          </div>
+        </article>
+        <article className={cn(styles.article)}>
+          <div className={styles.workHistory}>
+            <div>
+              <div className={styles.periodBlock}>
+                <H type={HTypeEnum.h5} className={styles.italicText}>
+                  February 2017 —
+                  <br/>
+                  May 2022
                 </H>
                 <H type={HTypeEnum.h3}>RTK IT</H>
                 <H type={HTypeEnum.h4}>QA Engineer</H>
@@ -102,35 +154,20 @@ export const Cv = (): JSX.Element => {
                 <li>Automation testing: rest api and web UI</li>
                 <li>Code review of other js/ts testers</li>
                 <li>CI integration on gitlab ci. Run tests from docker container on ci or from local machine</li>
-                <li>Discussing new features with other team members (with product owner, designers, developers, qa)</li>
+                <li>Discussed new features with other team members</li>
               </ul>
               <br/>
               <b>Tools:</b> charles proxy, fiddler, postman, docker, virtual box. Mockiavelli for mocking request in
               auto tests.
               <br/><br/>
-              On this project I'm using playwright+jest to write auto tests for regression testing.
+              On this project I used playwright + jest to implement auto tests for regression testing.
               <br/><br/>
-              Writing api tests with axios+jest to check, that api is not changing, or that its changes will not affect
-              on ui.
-              I'am using custom matchers to have custom "error message" for each test and making screenshot on failure.
-              I use allure repots because they are more interactive than native playwright reports.
-              <br/><br/>
-              Wrote softAssertion class for multiple assertions. Then I want to check, that ui includes all locators or
-              smth like this. It store error messages and on method assertAll checks for errors.
-              Run tests in parallel with 8 workers from local machine, or 3 workers from gitlab ci.
+              Implemented api tests with axios + jest to check if api wasn’t changed or its changes didn’t affect on ui.
               <br/><br/>
               Develop slack bot to run tests from slack. Using express js as a server for slack commands. Running bot in
-              docker container. It run tests on same server, using flag -v. I just use child_process to run tests and
-              send all stdout to chat. And use silent_mode, which run tests like this: NODE_ENV=silent && yarn test. And
-              in logger if statement turn off logs.
+              docker container. It runs tests on the same server.
               <br/><br/>
-              Develop allure-reports hub. Using express js for backend (leaf-db for storing projects names) and reactjs
-              + redux on fronend. I just unpack and generate report to folder with project name. And put it to static
-              folder and it become routes for ui.
-              <br/><br/>
-              Now I developing service for monitor devices in company.
-              Using NestJS (db: postgresql) as backend and ReactJS (NextJS, redux-toolkit, rtk-query) for front. Links
-              on code in the end.
+              Develop allure-reports hub. Used express js for backend and reactjs + redux on fronend.
             </Span>
           </div>
         </article>
@@ -163,9 +200,11 @@ export const Cv = (): JSX.Element => {
               <br/>
               QA lead on bank services project.
               On this project we use manual and automation ui testing.
+              <br/>
               Usages: java 7, selenium webdriver, junit/testng, jdbc, teamcity, allure.
               <br/><br/>
               Lead of load testing project.
+              <br/>
               Usages: jmeter, AWS
             </Span>
           </div>
@@ -257,7 +296,7 @@ export const Cv = (): JSX.Element => {
           <div>
             <div className={styles.contact}>
               <i className={cn(styles.darkIcon, styles.phoneIcon)}/>
-              <Span>+7 (908) 485-69-87</Span>
+              <Span>+49 160 98764756</Span>
             </div>
             <div className={styles.contact}>
               <i className={cn(styles.darkIcon, styles.emailIcon)}/>
@@ -265,7 +304,7 @@ export const Cv = (): JSX.Element => {
             </div>
             <div className={styles.contact}>
               <i className={cn(styles.darkIcon, styles.addressIcon)}/>
-              <Span>St.Petersburg, Kollontai, 6/1</Span>
+              <Span>Berlin, Boyenstraẞe 36</Span>
             </div>
           </div>
         </article>
